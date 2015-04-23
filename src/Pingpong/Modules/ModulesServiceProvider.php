@@ -41,7 +41,7 @@ class ModulesServiceProvider extends ServiceProvider {
      */
     protected function registerServices()
     {
-        $this->app->bindShared('modules.finder', function ($app)
+        $this->app->singleton('modules.finder', function ($app)
         {
             return new Finder($app['files'], $app['config']);
         });
